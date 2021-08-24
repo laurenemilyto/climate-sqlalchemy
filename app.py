@@ -10,13 +10,14 @@ from sqlalchemy import create_engine, func
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///hawaii.sqlite")
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
 
 # Save references to tables
+# print(Base.classes.keys()) 
 Station = Base.classes.station
 Measurement = Base.classes.measurement
 
